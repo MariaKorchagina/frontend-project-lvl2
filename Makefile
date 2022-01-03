@@ -2,7 +2,8 @@ install:
 	npm ci
 	
 linter:
-	make lint 
+	npx eslint .
 
-
+test:
+	npm test
 
