@@ -2,7 +2,7 @@ install:
 	npm ci
 	
 linter:
-	npx eslint 
+	make lint 
 
 
 

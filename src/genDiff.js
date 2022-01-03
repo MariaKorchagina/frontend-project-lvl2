@@ -29,17 +29,16 @@ const getComparisons = (keysFromFile1, keysFromFile2, sortedKeys) => {
       result[` ${operators[2]} ${key}`] = keysFromFile1[key];
     } else if (_.has(keysFromFile1, key) && _.has(keysFromFile2, key) && (keysFromFile1[key] !== keysFromFile2[key])) {
       result[`${operators[1]} ${key}`] = keysFromFile1[key];
-      result[`${operators[0]} ${key}`] = keysFromFile2[key]
+      result[`${operators[0]} ${key}`] = keysFromFile2[key];
     } else if (!_.has(keysFromFile1, key) || _.has(keysFromFile2, key)) {
       result[`${operators[0]} ${key}`] = keysFromFile2[key]
     } else if (_.has(keysFromFile1, key) || !_.has(keysFromFile2, key)) {
-      result[`${operators[1]} ${key}`] = keysFromFile1[key]
+      result[`${operators[1]} ${key}`] = keysFromFile1[key];
     }
   }
   result = JSON.stringify(result, null, 2);
   const resultWithoutQuotes = result.replace(/"/g, "");
   return resultWithoutQuotes.replace(/,/g, "");
 }
-
 
 export default genDiff;
