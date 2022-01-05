@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import path from 'path';
 import { readFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 
 // Преобразуем файл JSON в объект
 const fileJson = (file) => JSON.parse(readFileSync(path.resolve(file)));
@@ -37,8 +38,12 @@ const getComparisons = (keysFromFile1, keysFromFile2, sortedKeys) => {
     }
   }
   const diffString = JSON.stringify(result, null, 2);
-  const resultWithoutQuotes = diffString.replace(/"/g, "");
-  return resultWithoutQuotes.replace(/,/g, "");
-}
+  let resultWithoutQuotes = diffString.replace(/"/g, "");
+  resultWithoutQuotes = resultWithoutQuotes.replace(/,/g, "");
 
+// Запись в файл expected_json.txt
+ writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_json.txt", resultWithoutQuotes);
+
+  return resultWithoutQuotes;
+}
 export default genDiff;
