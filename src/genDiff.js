@@ -36,8 +36,8 @@ const getComparisons = (keysFromFile1, keysFromFile2, sortedKeys) => {
       result[`${operators[1]} ${key}`] = keysFromFile1[key];
     }
   }
-  result = JSON.stringify(result, null, 2);
-  const resultWithoutQuotes = result.replace(/"/g, "");
+  const diffString = JSON.stringify(result, null, 2);
+  const resultWithoutQuotes = diffString.replace(/"/g, "");
   return resultWithoutQuotes.replace(/,/g, "");
 }
 

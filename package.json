@@ -1,9 +1,10 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "main": "gendiff.js",
+  "description": "frontend-project-lvl2",
+  "main": "src/gendiff.js",
   "scripts": {
-    "test": "npx jest"
+    "test": "jest"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -16,10 +17,14 @@
   "type": "module",
   "homepage": "https://github.com/MariaKorchagina/frontend-project-lvl2#readme",
   "dependencies": {
+    "babel-jest": "^27.4.5",
+    "babel-preset-env": "^1.7.0",
     "commander": "^8.3.0"
   },
   "devDependencies": {
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "jest": "^27.4.5"
   }
 }

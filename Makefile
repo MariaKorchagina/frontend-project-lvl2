@@ -5,5 +5,6 @@ linter:
 	npx eslint .
 
 test:
-	npm test
+	npx jest
+	
 
