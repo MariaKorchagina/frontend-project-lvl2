@@ -11,11 +11,12 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const readFile = fs.readFileSync(getFixturePath('../__fixtures__/expected_json.txt'),'utf-8');
+const readFile = fs.readFileSync(getFixturePath('../__fixtures__/expected_json.txt'), 'utf-8');
 
-test('genDiff', () => {
-    expect(genDiff(`../frontend-project-lvl2/__fixtures__/file1.json`, `../frontend-project-lvl2/__fixtures__/file2.json`)).toEqual(readFile);
-  });
+test('expected-Json', () => {
+  expect(genDiff(`../frontend-project-lvl2/__fixtures__/file1.json`, `../frontend-project-lvl2/__fixtures__/file2.json`)).toEqual(readFile);
+});
+
 
 
 

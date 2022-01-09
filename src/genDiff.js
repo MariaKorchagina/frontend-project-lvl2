@@ -1,14 +1,22 @@
 import _ from 'lodash';
 import path from 'path';
-import { readFileSync } from 'fs';
 import { writeFileSync } from 'fs';
+import parseJson from '../parsers/parsers_json.js';
+import parseYaml from '../parsers/parsers_yaml.js';
+//import parseYaml from '../parsers/parsers_yaml.js';
 
-// Преобразуем файл JSON в объект
-const fileJson = (file) => JSON.parse(readFileSync(path.resolve(file)));
+
 const genDiff = (filepath1, filepath2) => {
-  const getObject1 = fileJson(filepath1);
-  const getObject2 = fileJson(filepath2);
+  let getObject1 = null;
+  let getObject2 = null;
+  if ((path.extname(filepath1) === '.json') && (path.extname(filepath2) === '.json')) {
+    getObject1 = parseJson(filepath1);
+    getObject2 = parseJson(filepath2);
 
+  } else if ((path.extname(filepath1) === '.yaml') && (path.extname(filepath2) === '.yaml')) {
+    getObject1 = parseYaml(filepath1);
+    getObject2 = parseYaml(filepath2);
+  }
   // Возвращаем массив ключей
   const keysFromFile1 = Object.keys(getObject1);
   const keysFromFile2 = Object.keys(getObject2);
@@ -41,9 +49,9 @@ const getComparisons = (keysFromFile1, keysFromFile2, sortedKeys) => {
   let resultWithoutQuotes = diffString.replace(/"/g, "");
   resultWithoutQuotes = resultWithoutQuotes.replace(/,/g, "");
 
-// Запись в файл expected_json.txt
- writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_json.txt", resultWithoutQuotes);
-
+  // Запись в файл expected_json.txt
+  //writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_json.txt", resultWithoutQuotes);
+  //writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_yaml.txt", resultWithoutQuotes);
   return resultWithoutQuotes;
 }
 export default genDiff;

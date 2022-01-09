@@ -19,7 +19,9 @@
   "dependencies": {
     "babel-jest": "^27.4.5",
     "babel-preset-env": "^1.7.0",
-    "commander": "^8.3.0"
+    "commander": "^8.3.0",
+    "js-yaml": "^4.1.0",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
