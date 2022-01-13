@@ -3,8 +3,18 @@ import path from 'path';
 import { writeFileSync } from 'fs';
 import parseJson from '../parsers/parsers_json.js';
 import parseYaml from '../parsers/parsers_yaml.js';
-//import parseYaml from '../parsers/parsers_yaml.js';
 
+function getKeys(obj) {
+  const keys = Object.keys(obj);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    if (typeof obj[key] === 'object') {
+      keys.splice(i + 1, 0, getKeys(obj[key]));
+      i++;
+    }
+  }
+  return keys;
+}
 
 const genDiff = (filepath1, filepath2) => {
   let getObject1 = null;
@@ -17,9 +27,12 @@ const genDiff = (filepath1, filepath2) => {
     getObject1 = parseYaml(filepath1);
     getObject2 = parseYaml(filepath2);
   }
+
+  console.log(getObject1)
   // Возвращаем массив ключей
-  const keysFromFile1 = Object.keys(getObject1);
-  const keysFromFile2 = Object.keys(getObject2);
+  const keysFromFile1 = getKeys(getObject1);
+  console.log(keysFromFile1)
+  const keysFromFile2 = getKeys(getObject2);
 
   //объединяем весь массив
   const allKeys = _.union(keysFromFile1, keysFromFile2);
@@ -50,8 +63,9 @@ const getComparisons = (keysFromFile1, keysFromFile2, sortedKeys) => {
   resultWithoutQuotes = resultWithoutQuotes.replace(/,/g, "");
 
   // Запись в файл expected_json.txt
-  //writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_json.txt", resultWithoutQuotes);
-  //writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixtures__\\expected_yaml.txt", resultWithoutQuotes);
+  // writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixturesTests__\\expectedFile.txt", resultWithoutQuotes);
+
+  //writeFileSync("C:\\Users\\kobys\\Desktop\\2_project\\frontend-project-lvl2\\__fixturesTests__\\expectedadsfsdfsdfRecursiveFile.txt", resultWithoutQuotes);
   return resultWithoutQuotes;
 }
 export default genDiff;
