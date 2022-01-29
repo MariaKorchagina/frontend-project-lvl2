@@ -45,12 +45,11 @@ const iter = (tree, depth) => {
         return `${indentInDepth}${signDeleted} ${name}: ${getValue(valueBefore, depth)}\n${indentInDepth}+ ${name}: ${getValue(valueAfter, depth)}`;
       case 'nested':
         return `${indentInDepth}${signUnchanged} ${name}: ${iter(children, depth + getDepth(1))}`;
-
     }
   });
 
   return ['{', ...result, `${getIndent(depth)}}`].join('\n');
 };
-const stylish = (node) => iter(node, 0);
+const stylish = (data) => iter(data, 0);
 
 export default stylish;

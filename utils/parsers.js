@@ -1,12 +1,11 @@
 import * as yaml from 'js-yaml';
 import _ from 'lodash';
 
-
-const parse = (data, format) => {
-  if (format === 'json') {
+const parse = (data, formatName) => {
+  if (formatName === 'json') {
     return JSON.parse(data);
   }
-  if (format === 'yaml') {
+  if (formatName === 'yaml') {
     return yaml.load(data);
   }
 };
