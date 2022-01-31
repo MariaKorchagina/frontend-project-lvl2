@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "frontend-project-lvl2",
-  "main": "src/gendiff.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "npx jest",
     "lint": "npx eslint"
@@ -24,6 +24,7 @@
     "eslint-plugin-jest": "^25.7.0",
     "jest-cli": "^27.4.7",
     "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
