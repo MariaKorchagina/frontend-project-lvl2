@@ -1,9 +1,9 @@
 ### Hexlet tests and linter status:
 
-[![Actions Status](a href="https://github.com/MariaKorchagina/frontend-project-lvl2/actions](https://github.com/MariaKorchagina/frontend-project-lvl2/actions)
-[![Node](https://github.com/MariaKorchagina/frontend-project-lvl2/actions)](https://github.com/MariaKorchagina/frontend-project-lvl2/actions/workflows/nodejs.yml/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5b858da388318cdba8bf/maintainability)](https://codeclimate.com/github/MariaKorchagina/frontend-project-lvl2/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5b858da388318cdba8bf/test_coverage)](https://codeclimate.com/github/MariaKorchagina/frontend-project-lvl2/test_coverage)
+[![Actions Status]<a href="https://github.com/MariaKorchagina/frontend-project-lvl2/actions"><img src="https://github.com/MariaKorchagina/frontend-project-lvl2/workflows/hexlet-check/badge.svg" alt="Actions Status" style="max-width: 100%;"></a>
+[![Node] href="https://github.com/MariaKorchagina/frontend-project-lvl2/actions/workflows/nodejs.yml/badge.svg"><img src="https://github.com/MariaKorchagina/frontend-project-lvl2/actions/workflows/nodejs.yml/badge.svg" alt="workflow" style="max-width: 100%;"></a>
+[![Maintainability] <a href="https://codeclimate.com/github/MariaKorchagina/frontend-project-lvl2/maintainability" rel="nofollow"><img src="https://camo.githubusercontent.com/a2d5efda75323fdea9a29ae41abb133999352487743a8638feae4dc4a00d3995/68747470733a2f2f6170692e636f6465636c696d6174652e636f6d2f76312f6261646765732f31393637396565393735353232393832303334612f6d61696e7461696e6162696c697479" alt="Maintainability" data-canonical-src="https://api.codeclimate.com/v1/badges/19679ee975522982034a/maintainability" style="max-width: 100%;"></a>
+[![Test Coverage] <a href="https://codeclimate.com/github/MariaKorchagina/frontend-project-lvl2/test_coverage" rel="nofollow"><img src="https://camo.githubusercontent.com/633d661f9d1bbc336980ddacf800f1e0297c2968f466ca1c994e83245ec0a8f9/68747470733a2f2f6170692e636f6465636c696d6174652e636f6d2f76312f6261646765732f31393637396565393735353232393832303334612f746573745f636f766572616765" alt="Test Coverage" data-canonical-src="https://api.codeclimate.com/v1/badges/19679ee975522982034a/test_coverage" style="max-width: 100%;"></a>
 
 **Utility information:**
 gendiff -h
