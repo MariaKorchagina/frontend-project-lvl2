@@ -24,7 +24,9 @@ const getComparisons = (object1, object2) => {
         name: key, type: 'unchanged', value: valueOfObject1,
       };
     }
-    return { name: key, type: 'changed', valueBefore: valueOfObject1, valueAfter: valueOfObject2 };
+    return { 
+      name: key, type: 'changed', valueBefore: valueOfObject1, valueAfter: valueOfObject2 
+    };
   });
 };
 

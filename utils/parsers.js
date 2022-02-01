@@ -6,7 +6,7 @@ export default (data, dataFormat) => {
       return yaml.load(data);
     case 'json':
       return JSON.parse(data);
-      default:
-        throw Error(`This ${dataFormat} format is not allowed`);
+    default:
+      throw Error(`This ${dataFormat} format is not allowed`);
   }
 };
