@@ -12,7 +12,8 @@ const formatter = (difference, formatName) => {
 
     case 'json':
       return json(difference);
-
+    default:
+      throw Error(`This ${formatName} format is not allowed`);
   }
 };
 

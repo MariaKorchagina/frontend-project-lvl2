@@ -1,5 +1,4 @@
 import * as yaml from 'js-yaml';
-import _ from 'lodash';
 
 const parse = (data, formatName) => {
   if (formatName === 'json') {
@@ -11,4 +10,3 @@ const parse = (data, formatName) => {
 };
 
 export default parse;
-

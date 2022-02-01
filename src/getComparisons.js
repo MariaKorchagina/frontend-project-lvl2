@@ -6,7 +6,7 @@ const getComparisons = (object1, object2) => {
   const keysFromFile2 = _.keys(object2);
 
   const allKeys = _.union(keysFromFile1, keysFromFile2);
-  
+
   const sortedKeys = _.sortBy(allKeys);
 
   return sortedKeys.map((key) => {

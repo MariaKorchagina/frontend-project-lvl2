@@ -1,6 +1,6 @@
-import parse from './parsers.js';
 import * as path from 'path';
 import * as fs from 'fs';
+import parse from './parsers.js';
 
 const getContent = (filepath) => {
   const formatName = path.extname(filepath).slice(1);

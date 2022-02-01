@@ -13,7 +13,9 @@ const getValue = (value) => {
 const iter = (tree, path) => {
   const result = tree.map((dataOfItem) => {
 
-    const { name, type, value, valueBefore, valueAfter, children, } = dataOfItem;
+    const {
+      name, type, value, valueBefore, valueAfter, children,
+    } = dataOfItem;
 
     const newPath = ([path, name].flat().join('.'));
 
@@ -28,6 +30,8 @@ const iter = (tree, path) => {
         return `Property '${newPath}' was updated. From ${getValue(valueBefore)} to ${getValue(valueAfter)}`;
       case 'nested':
         return iter(children, newPath);
+      default:
+        throw Error(`This ${type} format is not allowed`);
     }
   });
   return result.filter((string) => string !== null).join('\n');
