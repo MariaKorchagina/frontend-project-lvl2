@@ -16,7 +16,6 @@ const getValue = (value, depth) => {
 
   const keys = _.keys(value);
   const result = keys.map((item) => {
-
     const getIndentSize2 = getIndent(depth + getDepth(2));
     if (_.isPlainObject(value[item])) {
       return `${getIndentSize2}${item}: ${getValue(value[item], depth + getDepth(1))}`;

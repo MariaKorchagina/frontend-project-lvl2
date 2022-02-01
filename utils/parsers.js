@@ -1,12 +1,12 @@
-import * as yaml from 'js-yaml';
+import yaml from 'js-yaml';
 
-const parse = (data, formatName) => {
-  if (formatName === 'json') {
-    return JSON.parse(data);
-  }
-  if (formatName === 'yaml') {
-    return yaml.load(data);
+export default (data, dataFormat) => {
+  switch (dataFormat) {
+    case 'yaml':
+      return yaml.load(data);
+    case 'json':
+      return JSON.parse(data);
+      default:
+        throw Error(`This ${dataFormat} format is not allowed`);
   }
 };
-
-export default parse;

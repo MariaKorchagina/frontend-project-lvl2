@@ -12,7 +12,6 @@ const getValue = (value) => {
 
 const iter = (tree, path) => {
   const result = tree.map((dataOfItem) => {
-
     const {
       name, type, value, valueBefore, valueAfter, children,
     } = dataOfItem;
