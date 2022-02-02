@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "commander": "^8.3.0",
     "eslint-plugin-jest": "^25.7.0",
+    "import-cwd": "^3.0.0",
     "jest-cli": "^27.4.7",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",

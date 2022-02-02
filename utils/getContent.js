@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import parse from './parsers.js';
+import _ from 'lodash';
 
 const getContent = (filepath) => {
   const formatName = path.extname(filepath).slice(1);
