@@ -11,11 +11,10 @@ fix-lint:
 	npx eslint --fix .
 
 test:
-	node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest --bail
+	npm test
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
 
 test-watch:
-	node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest --bail --watch
-
+	npm run test -- --watch
