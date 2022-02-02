@@ -5,17 +5,17 @@ install:
 	npm ci
 
 lint:
-	npx eslint 
+	npx eslint .
+
+fix-lint:
+	npx eslint --fix .
 
 test:
-	NODE_OPTIONS=--experimental-vm-modules npx jest 
+	node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest --bail
 
 test-coverage:
-		NODE_OPTIONS=--experimental-vm-modules npx jest --coverage
-install: 
-	npm install
+	npm test -- --coverage --coverageProvider=v8
 
-link: 
-	npm link
-
+test-watch:
+	node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest --bail --watch
 
