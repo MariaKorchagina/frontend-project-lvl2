@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
 
-export default (data, dataFormat) => {
-  switch (dataFormat) {
+export default (data, formatName) => {
+  switch (formatName) {
     case 'yaml':
       return yaml.load(data);
     case 'yml':
@@ -9,6 +9,6 @@ export default (data, dataFormat) => {
     case 'json':
       return JSON.parse(data);
     default:
-      throw Error(`This ${dataFormat} format is not allowed`);
+      throw Error(`This ${formatName} format is not allowed`);
   }
 };
