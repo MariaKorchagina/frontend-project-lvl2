@@ -4,6 +4,8 @@ export default (data, dataFormat) => {
   switch (dataFormat) {
     case 'yaml':
       return yaml.load(data);
+    case 'yml':
+      return yaml.load(data);
     case 'json':
       return JSON.parse(data);
     default:
