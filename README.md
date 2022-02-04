@@ -39,13 +39,13 @@ Utility supports two formats: `yaml` and `json`.
 
 Example of `json` files difference:
 
-https://asciinema.org/a/o8jL00tytTj0OGCRUoUYOxl4M
+[![asciicast](https://asciinema.org/a/o8jL00tytTj0OGCRUoUYOxl4M.svg)](https://asciinema.org/a/o8jL00tytTj0OGCRUoUYOxl4M)
 
 <div id="yaml"></div>
 
 Example of `yaml` files difference:
 
-https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW
+[![asciicast](https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW.svg)](https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW)
 
 **Formatters:**
 
@@ -61,7 +61,7 @@ node gendiff.js -f stylish fileRecursive1.json fileRecursive2.json
 
 _Example of stylish:_
 
-https://asciinema.org/a/wHK6c4K2UwW1nvPhD2NiQFaYV
+[![asciicast](https://asciinema.org/a/wHK6c4K2UwW1nvPhD2NiQFaYV.svg)](https://asciinema.org/a/wHK6c4K2UwW1nvPhD2NiQFaYV)
 
 <div id="plain">
     <h3>Plain</h3>
@@ -75,7 +75,7 @@ node gendiff.js -f plain fileRecursive1.json fileRecursive2.json
 
 _Example of plain:_
 
-https://asciinema.org/a/Ez54ewbzVTJr7ypMvAZZMGqA7
+[![asciicast](https://asciinema.org/a/Ez54ewbzVTJr7ypMvAZZMGqA7.svg)](https://asciinema.org/a/Ez54ewbzVTJr7ypMvAZZMGqA7)
 
 <div id="json">
     <h3>JSON</h3>
@@ -89,4 +89,4 @@ node gendiff.js -f json fileRecursive1.json fileRecursive2.json
 
 _Example of json:_
 
-https://asciinema.org/a/FdZSXRGAnypzwbUCt02VkuVKn
+[![asciicast](https://asciinema.org/a/FdZSXRGAnypzwbUCt02VkuVKn.svg)](https://asciinema.org/a/FdZSXRGAnypzwbUCt02VkuVKn)
