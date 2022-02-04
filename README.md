@@ -31,8 +31,7 @@ git@github.com:MariaKorchagina/frontend-project-lvl2.git
 ```bash
     make install
 ```
-
-- <a href="#Formats">Formats.</a>
+**Formats:**
 
 Utility supports two formats: `yaml` and `json`.
 
@@ -40,13 +39,15 @@ Utility supports two formats: `yaml` and `json`.
 
 Example of `json` files difference:
 
+https://asciinema.org/a/o8jL00tytTj0OGCRUoUYOxl4M
 
 <div id="yaml"></div>
 
 Example of `yaml` files difference:
 
+https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW
 
-- <a href="#Formatters">Formatters.</a>
+**Formatters:**
 
 <div id="stylish">
     <h3>Stylish</h3>
@@ -55,17 +56,12 @@ Example of `yaml` files difference:
 To use <a href="#stylish"></a> formatter run:
 
 ```bash
-gendiff -f stylish file1.json file2.json
-```
-
-or
-
-```bash
-gendiff file1.json file2.json
+node gendiff.js -f stylish fileRecursive1.json fileRecursive2.json
 ```
 
 _Example of stylish:_
 
+https://asciinema.org/a/wHK6c4K2UwW1nvPhD2NiQFaYV
 
 <div id="plain">
     <h3>Plain</h3>
@@ -74,10 +70,12 @@ _Example of stylish:_
 To use <a href="#plain"></a> formatter run:
 
 ```bash
-gendiff -f plain file1.json file2.json
+node gendiff.js -f plain fileRecursive1.json fileRecursive2.json
 ```
 
 _Example of plain:_
+
+https://asciinema.org/a/Ez54ewbzVTJr7ypMvAZZMGqA7
 
 <div id="json">
     <h3>JSON</h3>
@@ -86,7 +84,9 @@ _Example of plain:_
 To use <a href="#json"></a> formatter run:
 
 ```bash
-gendiff -f json file1.json file2.json
+node gendiff.js -f json fileRecursive1.json fileRecursive2.json
 ```
 
 _Example of json:_
+
+https://asciinema.org/a/FdZSXRGAnypzwbUCt02VkuVKn
