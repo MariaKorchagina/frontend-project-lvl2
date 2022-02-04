@@ -9,7 +9,7 @@
 
 **Utility information:**
 - Supporting in different formats: <a href="#yaml">yaml</a> and <a href="#json">json</a>
-- Generating a report in different formats: <a href="#plain">plain</a>, <a href="#stylish">stylish</a> and <a href="#json-formatter">json</a>
+- Generating a report in different formats: <a href="#plain">plain</a>, <a href="#stylish">stylish</a>, <a href="#json">json</a>
 
 ```bash
 Usage: gendiff [options] <filepath1> <filepath2>
@@ -31,7 +31,10 @@ git@github.com:MariaKorchagina/frontend-project-lvl2.git
 ```bash
     make install
 ```
-**Formats:**
+<div id="Formats">
+    <h3>Formats</h3>
+</div>
+
 
 Utility supports two formats: `yaml` and `json`.
 
@@ -47,7 +50,9 @@ Example of `yaml` files difference:
 
 [![asciicast](https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW.svg)](https://asciinema.org/a/5ZEZJKgpMdzNNlkzAdq7LnbjW)
 
-**Formatters:**
+<div id="Formatters">
+    <h3>Formatters</h3>
+</div>
 
 <div id="stylish">
     <h3>Stylish</h3>
