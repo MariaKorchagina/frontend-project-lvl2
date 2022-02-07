@@ -1,56 +1,52 @@
 import _ from 'lodash';
 
-const indent = ' ';
 const indentCount = 4;
 const signAdded = '+';
 const signDeleted = '-';
 const signUnchanged = ' ';
 
-const getDepth = (level) => indentCount * level;
-const getIndent = (n) => indent.repeat(n);
+const getIndent = (level) => indentCount * level;
+const indent = (n) => ' '.repeat(n);
 
-const getValue = (value, depth) => {
+const formatValue = (value, depth) => {
   if (!_.isPlainObject(value) || value === null) {
     return String(value);
   }
 
   const keys = _.keys(value);
   const result = keys.map((item) => {
-    const getIndentSize2 = getIndent(depth + getDepth(2));
+    const indentSize2 = indent(depth + getIndent(2));
     if (_.isPlainObject(value[item])) {
-      return `${getIndentSize2}${item}: ${getValue(value[item], depth + getDepth(1))}`;
+      return `${indentSize2}${item}: ${formatValue(value[item], depth + getIndent(1))}`;
     }
-    return `${getIndentSize2}${item}: ${value[item]}`;
+    return `${indentSize2}${item}: ${value[item]}`;
   });
-  const getIndentSize1 = getIndent(depth + getDepth(1));
-  return ['{', ...result, `${getIndentSize1}}`].join('\n');
+  const indentSize1 = indent(depth + getIndent(1));
+  return ['{', ...result, `${indentSize1}}`].join('\n');
 };
 
 const iter = (tree, depth) => {
   const result = tree.map((dataOfItem) => {
-    const {
-      name, type, value, valueBefore, valueAfter, children,
-    } = dataOfItem;
-
-    const indentInDepth = getIndent(depth + getDepth(1) - 2);
-
+    const { name, type, value } = dataOfItem;
+    const indentInDepth = indent(depth + getIndent(1) - 2);
     switch (type) {
       case 'added':
-        return `${indentInDepth}${signAdded} ${name}: ${getValue(value, depth)}`;
+        return `${indentInDepth}${signAdded} ${name}: ${formatValue(value, depth)}`;
       case 'deleted':
-        return `${indentInDepth}${signDeleted} ${name}: ${getValue(value, depth)}`;
+        return `${indentInDepth}${signDeleted} ${name}: ${formatValue(value, depth)}`;
       case 'unchanged':
-        return `${indentInDepth}${signUnchanged} ${name}: ${getValue(value, depth)}`;
+        return `${indentInDepth}${signUnchanged} ${name}: ${formatValue(value, depth)}`;
       case 'changed':
-        return `${indentInDepth}${signDeleted} ${name}: ${getValue(valueBefore, depth)}\n${indentInDepth}+ ${name}: ${getValue(valueAfter, depth)}`;
+        const { valueBefore, valueAfter } = dataOfItem;
+        return `${indentInDepth}${signDeleted} ${name}: ${formatValue(valueBefore, depth)}\n${indentInDepth}+ ${name}: ${formatValue(valueAfter, depth)}`;
       case 'nested':
-        return `${indentInDepth}${signUnchanged} ${name}: ${iter(children, depth + getDepth(1))}`;
+        const { children } = dataOfItem;
+        return `${indentInDepth}${signUnchanged} ${name}: ${iter(children, depth + getIndent(1))}`;
       default:
         throw Error(`This ${type} format is not allowed`);
     }
   });
-
-  return ['{', ...result, `${getIndent(depth)}}`].join('\n');
+  return ['{', ...result, `${indent(depth)}}`].join('\n');
 };
 const stylish = (data) => iter(data, 0);
 

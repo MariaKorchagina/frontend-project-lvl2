@@ -1,6 +1,6 @@
 import getComparisons from './getComparisons.js';
 import formatter from './formatters/getFormat.js';
-import getContent from '../utils/getContent.js';
+import getContent from './getContent.js';
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const content1 = getContent(filepath1);

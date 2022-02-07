@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const getValue = (value) => {
+const formatValue = (value) => {
   if (_.isPlainObject(value) && value !== null) {
     return '[complex value]';
   }
@@ -20,13 +20,13 @@ const iter = (tree, path) => {
 
     switch (type) {
       case 'added':
-        return `Property '${newPath}' was added with value: ${getValue(value)}`;
+        return `Property '${newPath}' was added with value: ${formatValue(value)}`;
       case 'deleted':
         return `Property '${newPath}' was removed`;
       case 'unchanged':
         return null;
       case 'changed':
-        return `Property '${newPath}' was updated. From ${getValue(valueBefore)} to ${getValue(valueAfter)}`;
+        return `Property '${newPath}' was updated. From ${formatValue(valueBefore)} to ${formatValue(valueAfter)}`;
       case 'nested':
         return iter(children, newPath);
       default:
