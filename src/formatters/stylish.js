@@ -36,12 +36,14 @@ const iter = (tree, depth) => {
         return `${indentInDepth}${signDeleted} ${name}: ${formatValue(value, depth)}`;
       case 'unchanged':
         return `${indentInDepth}${signUnchanged} ${name}: ${formatValue(value, depth)}`;
-      case 'changed':
+      case 'changed': {
         const { valueBefore, valueAfter } = dataOfItem;
         return `${indentInDepth}${signDeleted} ${name}: ${formatValue(valueBefore, depth)}\n${indentInDepth}+ ${name}: ${formatValue(valueAfter, depth)}`;
-      case 'nested':
+      }
+      case 'nested': {
         const { children } = dataOfItem;
         return `${indentInDepth}${signUnchanged} ${name}: ${iter(children, depth + getIndent(1))}`;
+      }
       default:
         throw Error(`This ${type} format is not allowed`);
     }
