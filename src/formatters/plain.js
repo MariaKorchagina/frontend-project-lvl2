@@ -12,7 +12,9 @@ const formatValue = (value) => {
 
 const iter = (tree, path) => {
   const result = tree.map((dataOfItem) => {
-    const { name, type, value, valueBefore, valueAfter, children  } = dataOfItem;
+    const {
+      name, type, value, valueBefore, valueAfter, children,
+    } = dataOfItem;
     const newPath = ([path, name].flat().join('.'));
     switch (type) {
       case 'added':
