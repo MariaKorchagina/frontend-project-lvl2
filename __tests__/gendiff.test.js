@@ -9,10 +9,10 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const expectedFile = fs.readFileSync(getFixturePath('../__fixturesExpected__/expected-file.txt'), 'utf-8');
-const expectedFileStylish = fs.readFileSync(getFixturePath('../__fixturesExpected__/expected-stylish.txt'), 'utf-8');
-const expectedFilePlain = fs.readFileSync(getFixturePath('../__fixturesExpected__/expected-plain.txt'), 'utf-8');
-const expectedFileJson = fs.readFileSync(getFixturePath('../__fixturesExpected__/expected-json.txt'), 'utf-8');
+const expectedFile = fs.readFileSync(getFixturePath('../__fixtures__/expected-file.txt'), 'utf-8');
+const expectedFileStylish = fs.readFileSync(getFixturePath('../__fixtures__/expected-stylish.txt'), 'utf-8');
+const expectedFilePlain = fs.readFileSync(getFixturePath('../__fixtures__/expected-plain.txt'), 'utf-8');
+const expectedFileJson = fs.readFileSync(getFixturePath('../__fixtures__/expected-json.txt'), 'utf-8');
 
 test('gendiff', () => {
   expect(genDiff('../frontend-project-lvl2/__fixtures__/file1.json', '../frontend-project-lvl2/__fixtures__/file2.json')).toEqual(expectedFile);

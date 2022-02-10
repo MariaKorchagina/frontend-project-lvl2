@@ -12,22 +12,21 @@ const formatValue = (value) => {
 
 const iter = (tree, path) => {
   const result = tree.map((dataOfItem) => {
-    const {
-      name, type, value, valueBefore, valueAfter, children,
-    } = dataOfItem;
-
+    const { name, type } = dataOfItem;
     const newPath = ([path, name].flat().join('.'));
-
     switch (type) {
       case 'added':
+        const { value } = dataOfItem;
         return `Property '${newPath}' was added with value: ${formatValue(value)}`;
       case 'deleted':
         return `Property '${newPath}' was removed`;
       case 'unchanged':
         return null;
       case 'changed':
+        const { valueBefore, valueAfter } = dataOfItem;
         return `Property '${newPath}' was updated. From ${formatValue(valueBefore)} to ${formatValue(valueAfter)}`;
       case 'nested':
+        const { children } = dataOfItem;
         return iter(children, newPath);
       default:
         throw Error(`This ${type} format is not allowed`);
